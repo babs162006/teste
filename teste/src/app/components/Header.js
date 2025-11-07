@@ -10,7 +10,7 @@ export default function Header() {
         <ul>
           <li><Link href="/">Home</Link></li>
           <li><Link href="/palestrantes">Palestrantes</Link></li>
-          <li><Link href="/">Encontros</Link></li>
+          <li><Link href="/encontros">Encontros</Link></li>
           <li><Link href="/formulario">Quer participar?</Link></li>
         </ul>
       </nav>
