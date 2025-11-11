@@ -30,7 +30,7 @@ export default function ImagemDetalhe() {
   const imagem = imagens[id];
 
   if (!imagem) {
-    router.push("/encontros"); // redireciona se inválido
+    router.push("/encontros");
     return null;
   }
 
