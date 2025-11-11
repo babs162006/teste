@@ -13,10 +13,10 @@ const pessoas = [
 export default function Organizadoras() {
   return (
     <section className={styles.organizadoras}>
-      <div className={styles.titulo}>
+      <section className={styles.titulo}>
         <Image src="/images/logozin.jpeg" alt="Logo WomanTech" width={50} height={50} />
         <h1>Organizadoras e colaboradoras</h1>
-      </div>
+      </section>
 
       <section className={styles.pessoas}>
         {pessoas.map((pessoa, index) => (
