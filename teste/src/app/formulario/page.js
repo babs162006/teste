@@ -164,7 +164,7 @@ export default function FormularioWomanTech() {
                 className={styles.dogImage}
               />
               <br />
-              <p className={styles.dogText}>🐶 Um sorriso para você!</p>
+              <p className={styles.dogText}>Obrigada por ter se inscrito!</p>
             </section>
           )}
         </fieldset>
