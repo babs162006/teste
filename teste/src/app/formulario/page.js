@@ -1,21 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./formswoman.module.css";
 
 export default function FormularioWomanTech() {
   const [dogUrl, setDogUrl] = useState(null);
 
-  async function handleSubmit(event) {
+  useEffect(() => {
+    if (dogUrl === "loading") {
+      const randomId = Math.floor(Math.random() * 1000);
+      const url = `https://place.dog/300/200?${randomId}`;
+      setDogUrl(url);
+      alert("Formulário enviado!");
+    }
+  }, [dogUrl]);
+
+  function handleSubmit(event) {
     event.preventDefault();
-
-    const randomId = Math.floor(Math.random() * 1000);
-
-    const url = `https://place.dog/300/200?${randomId}`;
-    setDogUrl(url);
-
-
-    alert("Formulário enviado!");
+    setDogUrl("loading"); 
   }
 
   return (
@@ -156,15 +158,10 @@ export default function FormularioWomanTech() {
 
           <br />
 
-          {dogUrl && (
+          {dogUrl && dogUrl !== "loading" && (
             <section className={styles.dogContainer}>
-              <img
-                src={dogUrl}
-                alt="Cachorro fofo"
-                className={styles.dogImage}
-              />
-              <br />
-              <p className={styles.dogText}>Obrigada por ter se inscrito!</p>
+              <img src={dogUrl} alt="Cachorro fofo" className={styles.dogImage} />
+              <p className={styles.dogText}>🐶 Um sorriso para você!</p>
             </section>
           )}
         </fieldset>
@@ -172,4 +169,3 @@ export default function FormularioWomanTech() {
     </main>
   );
 }
-
